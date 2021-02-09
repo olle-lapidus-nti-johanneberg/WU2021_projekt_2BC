@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Soleto';
+    src: url('misc/Soleto_Light.ttf');
+  }  
+
+#page-header {
+    font-family: "Soleto";
+    width: 100vw;
+    max-width: 100%;
+}
+
+#page-header header {
+    height: 14vh;
+    display: flex;
+    align-items: center;
+}
+
+#page-header #navbar {
+    height: 5vh;
+}
+
+img {
+    max-height: 100%;
+}
