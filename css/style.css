@@ -1,9 +1,18 @@
 @font-face {
     font-family: 'Soleto';
     src: url('misc/Soleto_Light.ttf');
-  }  
+}  
+
+* {
+    --color1: #4b0082;
+    --color2: #0de1ec;
+    --color3: #dd0890;
+    --color4: #ffad4a;
+}
 
 #page-header {
+    position: fixed;
+    top: 0;
     font-family: "Soleto";
     width: 100vw;
     max-width: 100%;
@@ -15,10 +24,68 @@
     align-items: center;
 }
 
-#page-header #navbar {
-    height: 5vh;
+#header-logo {
+    max-height: 90%;
+    margin: 5px;
 }
 
-img {
+#page-header #navbar {
+    height: 5vh;
+    border: solid;
+    border-width: 1px 0px;
+}
+
+#page-header #navbar ul {
     max-height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+#header-dummy-element {
+    height: 15vh;
+}
+
+/* .INDEX PAGE STARTS HERE */
+#landing-page {
+    height: 85vh;
+    top: 15vh;
+}
+
+#index-grid-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "ul ur"
+    "ll lr"
+    ;
+}
+
+#index-grid-wrapper #upper-left {
+    grid-area: ul;
+}
+
+#index-grid-wrapper #upper-right {
+    grid-area: ur;
+}
+
+#index-grid-wrapper #lower-left {
+    grid-area: ll;
+}
+
+#index-grid-wrapper #lower-right {
+    grid-area: lr;
+}
+
+#index-grid-wrapper img {
+    filter: opacity(0.5) grayscale(1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
