@@ -51,8 +51,13 @@ document.getScroll = function() {
     }
 }
 
-addEventListener("scroll", function() {
+updLogoSize = function() {
     let img = document.getElementById("header-logo");
+    let body = document.body,
+    html = document.documentElement;
+
+    let height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
     if (window.innerWidth >= 800) 
     {
         img.style = "max-height: 90%; width: auto;";
@@ -60,6 +65,11 @@ addEventListener("scroll", function() {
     }
     
     let y = document.getScroll()[1];
-    let imgSize = Math.max(10, ((200 - y)/200) * 60);
+    let imgSize = Math.max(10, ((200 - y)/200) * 30);
+    if (height + imgSize - 100 < html.clientHeight) imgSize = 10;
+    
     img.style = "width:" + imgSize + "vw";
-})
+}
+
+updLogoSize();
+addEventListener("scroll", updLogoSize);

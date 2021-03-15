@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>NTI Johannebergs Elevkår</title>
 </head>
 <body>
-    
     <div id = "page-header">
         <header>
             
@@ -17,7 +16,7 @@
                 <div id="bar2" class="bar"></div>
                 <div id="bar3" class="bar"></div>
             </div>
-            <img src = "img/logo_round.png" id = "header-logo">
+            <img src = "img/logo_round.png" id = "header-logo" class = "header-logo-contact">
             <h1>NTI Johanneberg Elevkår</h1>
         </header>
 
@@ -45,36 +44,19 @@
 
     <div id = "header-dummy-element"></div>
 
-    <div id = "landing-page">
-        <h2>Välkommen till elevkåren på Sveriges nördigaste skola. </h2>
-    </div>
+    <section id = "contact-section">
+        <h2>Funderingar? Frågor? Förslag? Skriv ett mail till elevkåren!</h2>
 
-    <div id = "index-grid-wrapper">
-        
-        <section id = "upper-left">
-            <h2>Event</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo porro eius repellendus 
-                officiis tenetur dolorem eligendi nostrum! Magnam tempore numquam culpa 
-                perspiciatis! Aut adipisci nemo eum voluptates porro quas suscipit!
-            </p>        
-        </section>
-        <img src = "img/having_fun.jpg" id = "upper-right">
-        <img src = "img/having_fun_2.jpg" id = "lower-left">
-        <section id = "lower-right">
-            <h2>Medlem</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, perspiciatis.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptate?
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, labore!
-            </p>
-        </section>
+        <form id = "email-form">
+            <input type="text" id="fname" name="fname" placeholder="Ditt namn..."><br>
+            <input type="text" id="subject" name="subject" placeholder="Ämnesrad...">
+        </form>
+        <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Skriv ditt mail här..."></textarea>
 
-    </div>
+        <button>Skicka!</button>
 
+    </section>
 
     <script src="js/mobile-menu.js"></script>
-    <script src="js/index-links.js"></script>
 </body>
 </html>
-
