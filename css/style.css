@@ -270,6 +270,9 @@ body {
     
     #index-grid-wrapper #upper-left {
         grid-area: ul;
+        border: solid;
+        border-color: var(--almost-white);
+        border-width: 0 3px 0 0;
     }
     
     #index-grid-wrapper #upper-right {
@@ -306,20 +309,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    background-color: var(--almost-black);
+    color: var(--almost-white);
 }
 
 
-#index-grid-wrapper #upper-left:hover, #index-grid-wrapper #lower-right:hover {
-    padding: 5vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+#index-grid-wrapper #upper-left:hover h2, #index-grid-wrapper #lower-right:hover h2 {
+    color: var(--color2);
+    max-width: 100%;
 }
 
 #upper-left h2, #lower-right h2 {
+    transition: color 0.3s;
     font-size: 10vh;
-    color: var(--color1);
+    color: var(--color3);
 }
 #upper-left p, #lower-right p {
     font-family: "Soleto";
