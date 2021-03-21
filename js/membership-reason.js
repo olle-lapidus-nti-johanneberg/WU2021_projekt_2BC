@@ -27,7 +27,7 @@ window.onload = function() {
     setInterval(function() {
         typeWord(reasons[index], "");
         index = (index + 1) % n;
-    }, 5000);
+    }, 3000);
 
 
 }

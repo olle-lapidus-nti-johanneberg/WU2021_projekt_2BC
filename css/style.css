@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'Soleto';
-    src: url('misc/Soleto_Light.ttf');
-}  
 
 * {
     --color1: #4b0082;
@@ -49,6 +45,9 @@ body {
         width: 100%;
         background-color: var(--almost-black);
         height: 5vh;
+        border: solid;
+        border-width: 0 0 1px 0;
+        border-color: var(--almost-white);
     }
 
     #page-header #navbar ul {
@@ -135,6 +134,9 @@ body {
         top: 70px;
         width: 100%;
         background-color: var(--almost-black);
+        border: solid;
+        border-width: 0 0 1px 0;
+        border-color: var(--almost-white);
     }
     
     #page-header #hamburger-icon {
@@ -214,7 +216,7 @@ body {
 #landing-page {
     height: 85vh;
     top: 15vh;
-    background-image: url(../img/Landing.png);
+    background-image: url(../img/Landing2.jpg);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -242,27 +244,35 @@ body {
 
 #upper-left h2, #lower-right h2 {
     transition: color 0.3s;
-    font-size: 10vh;
+    font-size: 5vh;
     color: var(--color3);
 }
 #upper-left p, #lower-right p {
     font-family: "Soleto";
 }
 
+#landing-page h2 {
+    font-family: "Soleto";
+    width: 40vw;
+}
+
 /* index desktop */
 @media only screen and (min-width: 800px) {
     #landing-page {
-        background-image: url("../img/Landing.png");
         display: flex;
         padding-left: 5vh;
         padding-top: 15vh;
-        
     }
+
     #landing-page h2 {
-        font-family: "Soleto";
-        width: 40vw;
-        font-size: 5vh;
+        border-radius: 10px;
+        background-color: var(--almost-white);
+        color: var(--color1);
+        height: calc(4*8vh);
+        font-size: 8vh;
+        padding: 10px;
     }
+    
     #index-grid-wrapper {
         height: 100vh;
         display: grid;
@@ -299,13 +309,28 @@ body {
     }
     
     #index-grid-wrapper #upper-left, #lower-right {
-        cursor: grab;
+        cursor: pointer;
     }
 }
 
 /* index mobile */
 @media only screen and (max-width: 799px)
 {
+    #landing-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #landing-page h2 {
+        background-color: var(--almost-white);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 3.5vh;
+        border: solid;
+        border-color: var(--almost-black);
+    }
+
     #index-grid-wrapper {
         height: 100vh;
         display: grid;
@@ -381,7 +406,7 @@ body {
 }
 
 #contact-section button:hover {
-    cursor: grab;
+    cursor: pointer;
     color: var(--almost-white);
     background-color: var(--color1);
 }
@@ -446,14 +471,17 @@ body {
 }
 
 #member-info #member-reasons-div {
+    background-color: var(--color3);
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #member-info p#member-reasons {
     font-size: 5vh;
-    height: 100%;
 }
 
 #member-info p#member-info-text {
@@ -480,6 +508,171 @@ body {
     color: var(--almost-white);
 }
 #member-link #member-link-button:hover {
-    cursor: grab;
+    cursor: pointer;
     background-color: var(--color1);
+}
+
+
+
+/* plans.html */
+
+
+/* plans desktop */
+@media only screen and (min-width: 800px) {
+    #plan-grid-wrapper {
+        background: url(/img/plan_b.jpg);
+        height: 81vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 200px 200px;
+    
+        grid-template-areas:
+        "hr hr"
+        "tr tl"
+        "br bl"
+        ;
+    }   
+    
+    #plan-header {
+        grid-area: hr;
+        font-family: soleto;
+        font-size: 5vh;
+        margin: 60px;
+        border-radius: 5px;
+        color: var(--almost-white);
+        border: solid var(--almost-white) 1px;
+        height: 50%;
+        padding: 10px;
+        background-color: var(--almost-black);
+        text-decoration: underline;
+    }
+    
+    .event-section {
+        transition: background-color 0.3s;
+        background-color: var(--almost-white);
+        width: 25vw;
+        margin: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border: solid;
+    }
+    
+    .event-title {
+        font-family: soleto;
+        font-size: 3vh;
+    }
+    
+    .event-img {
+        max-height: 100%;
+    }
+    
+    .event-info-div {
+        display: none;
+    }
+    
+    .event-time {
+        font-size: 2vw;
+    }
+    
+    .event-section:hover {
+        background-color: var(--almost-black);
+        color: var(--color2);
+    }
+    
+    .event-section:hover .event-info-div {
+        flex:10;
+        display: block;
+        z-index: 10;
+        border: solid 1px;
+        background-color: var(--almost-white);
+        color: var(--color1);
+        border-color: var(--almost-black);
+        transform: translateX(80%) translateY(-40%);
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+
+/* plans mobile */
+@media only screen and (max-width: 799px) {
+    #plan-grid-wrapper {
+        padding-top: 150px;
+        background: url(/img/plan_b.jpg);
+        background-repeat: repeat-y;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px repeat(200px, 4);
+    
+        grid-template-areas:
+        "hr"
+        "tr"
+        "tl"
+        "br"
+        "bl"
+        ;
+    }   
+    
+    #plan-header {
+        grid-area: hr;
+        font-family: soleto;
+        font-size: 5vh;
+        margin: 60px;
+        border-radius: 5px;
+        color: var(--almost-white);
+        border: solid var(--almost-white) 1px;
+        height: 50%;
+        padding: 10px;
+        background-color: var(--almost-black);
+        text-decoration: underline;
+    }
+    
+    .event-section {
+        transition: background-color 0.3s;
+        background-color: var(--almost-white);
+        width: 80vw;
+        margin: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border: solid;
+    }
+    
+    .event-title {
+        font-family: soleto;
+        font-size: 6vh;
+    }
+    
+    .event-img {
+        height: 50px;
+    }
+    
+    
+    .event-time {
+        font-size: 5vh;
+    }
+    
+    .event-info-div {
+        flex: 10;
+        display: block;
+        z-index: 10;
+        border: solid 1px;
+        background-color: var(--almost-white);
+        color: var(--color1);
+        border-color: var(--almost-white);
+        
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
