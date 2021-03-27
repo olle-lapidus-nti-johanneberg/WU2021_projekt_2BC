@@ -4,7 +4,7 @@ var right = document.getElementById("lower-right");
 console.log(left);
 
 left.addEventListener("click", function() {
-    window.location.href = "event.html";
+    window.location.href = "plans.html";
 });
 
 right.addEventListener("click", function() {

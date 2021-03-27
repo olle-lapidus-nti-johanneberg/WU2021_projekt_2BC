@@ -32,6 +32,22 @@ function animateBurger()
 
 }
 
+function toIndex()
+{
+    window.location.href = "index.html";
+}
+
+var nav_logo = document.getElementById("header-logo");
+var nav_header = document.getElementById("navbar-header");
+
+nav_logo.addEventListener("click", function() {
+    console.log("hej");
+    toIndex();
+});
+nav_header.addEventListener("click", function() {
+    toIndex();
+});
+
 hamburger.addEventListener("click", function() {
     updateNavbar();
     animateBurger();
@@ -73,3 +89,4 @@ updLogoSize = function() {
 
 updLogoSize();
 addEventListener("scroll", updLogoSize);
+

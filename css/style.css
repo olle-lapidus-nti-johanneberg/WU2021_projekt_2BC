@@ -39,6 +39,11 @@ body {
         max-height: 90%;
         margin-left: 5px;
         margin-right: 15px;
+        cursor: pointer;
+    }
+    
+    #page-header h1 {
+        cursor: pointer;
     }
     
     #page-header #navbar {
@@ -368,6 +373,12 @@ body {
     padding: 40px 100px;
 }
 
+@media only screen and (max-width: 799px) {
+    #contact-section {
+        margin-top: 75px;
+    }
+}
+
 #contact-section h2 {
     font-family: "Soleto";
     font-size: 5vh;
@@ -432,6 +443,7 @@ body {
 
 @media only screen and (max-width: 799px) {
     #member-grid-wrapper {
+        margin-top: 75px;
         display: grid;
         display: grid;
         grid-template-rows: 81vh 81vh;
@@ -608,7 +620,7 @@ body {
         background-repeat: repeat-y;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 150px repeat(200px, 4);
+        grid-template-rows: 150px 200px 200px 200px 200px;
     
         grid-template-areas:
         "hr"
@@ -674,5 +686,81 @@ body {
         padding: 10px;
         align-items: center;
         justify-content: space-evenly;
+    }
+}
+
+
+/* BOARD */
+
+#board-grid-wrapper {
+    display: grid;
+
+    grid-template-areas:
+    "ol si"
+    "st ax"
+    ;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.styrelse-member {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.blue {
+    background-color: var(--color2);
+}
+
+.purple {
+    background-color: var(--color1);
+    color: var(--almost-white);
+}
+
+.styrelse-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.styrelse-img {
+    max-height: 35vh;
+    max-width: 18vw;
+}
+
+.styrelse-name {
+    font-family: soleto;
+    font-size: 5vh;
+}
+
+.styrelse-title {
+    font-size: 4vh;
+}
+
+
+
+/*board desktop*/
+@media only screen and (min-width: 800px) {
+    .styrelse-info {
+        max-width: 25vw;
+        padding: 20px;
+        font-size: 2.7vh;
+    }
+}
+
+/*board mobile*/
+@media only screen and (max-width: 799px) {
+    #board-grid-wrapper {
+        padding-top: 70px;
+    }
+
+    .styrelse-info {
+        display: none;
     }
 }
